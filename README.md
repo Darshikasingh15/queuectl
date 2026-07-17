@@ -121,3 +121,8 @@ I built a complete CLI tool in Python that:
 
 This repository contains the full implementation along with tests to verify
 correct behavior.
+
+## Demo Video
+
+🎥 **Watch the demo video here:**  
+[QueueCTL Demo Video](https://drive.google.com/file/d/1F0qi33lnJxClYOej2lZNhRLgYoME7v99/view?usp=sharing)
