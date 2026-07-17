@@ -20,9 +20,10 @@ class QueueStore:
 
     @contextmanager
     def connection(self) -> Iterator[sqlite3.Connection]:
-        connection = sqlite3.connect(self.path, timeout=10, isolation_level=None)
+        connection = sqlite3.connect(self.path, timeout=10, isolation_level=None, check_same_thread=False)
         connection.row_factory = sqlite3.Row
-        connection.execute("PRAGMA journal_mode=WAL")
+        connection.execute("PRAGMA synchronous=OFF")
+        connection.execute("PRAGMA journal_mode=OFF")
         connection.execute("PRAGMA busy_timeout=10000")
         try:
             yield connection
