@@ -43,7 +43,8 @@ $py = 'C:\Users\Darshika Singh\AppData\Local\Programs\Python\Python313\python.ex
 ### Run tests
 
 ```powershell
-& $py -m unittest discover -s tests
+ & 'C:\Users\Darshika Singh\AppData\Local\Programs\Python\Python313\python.exe' -m unittest discover -s tests -v
+python -m unittest discover -s tests
 ```
 
 You should see `OK` if the project is working correctly.
