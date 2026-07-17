@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+queuectl.db
+queuectl.db-shm
+queuectl.db-wal
+.pytest_cache/
