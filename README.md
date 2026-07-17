@@ -79,33 +79,6 @@ You should see `OK` if the project is working correctly.
 - `retry-dlq JOB_ID` — requeue a dead job
 - `metrics` — display queue counts
 
-## Demo recording instructions
-
-Record the following steps in your terminal:
-
-1. Run tests:
-   ```powershell
-   & $py -m unittest discover -s tests
-   ```
-   Show that it prints `OK`.
-2. Enqueue a job:
-   ```powershell
-   & $py queuectl.py enqueue "echo hello"
-   ```
-3. Start the worker once:
-   ```powershell
-   & $py queuectl.py start --workers 1 --once
-   ```
-4. List jobs:
-   ```powershell
-   & $py queuectl.py list
-   ```
-5. Optionally show metrics:
-   ```powershell
-   & $py queuectl.py metrics
-   ```
-
-Narrate each step by saying the command name and what it does.
 
 ## What I did
 
