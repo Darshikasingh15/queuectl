@@ -29,7 +29,7 @@ def parser() -> argparse.ArgumentParser:
     commands = result.add_subparsers(dest="command", required=True)
 
     enqueue = commands.add_parser("enqueue", help="queue a shell command")
-    enqueue.add_argument("command", help="shell command to execute")
+    enqueue.add_argument("job_command", help="shell command to execute")
     enqueue.add_argument("--priority", type=int, default=0, help="higher numbers run first")
     schedule = enqueue.add_mutually_exclusive_group()
     schedule.add_argument("--delay", type=float, default=0, help="delay eligibility by seconds")
@@ -71,7 +71,7 @@ def main() -> int:
         if args.timeout is not None and args.timeout <= 0:
             parser().error("--timeout must be positive")
         run_at = args.run_at or (datetime.now(timezone.utc) + timedelta(seconds=args.delay)).isoformat()
-        job = store.enqueue(args.command, args.priority, run_at, args.max_attempts, args.timeout)
+        job = store.enqueue(args.job_command, args.priority, run_at, args.max_attempts, args.timeout)
         emit({"enqueued": job})
         return 0
     if args.command == "start":
