@@ -34,11 +34,7 @@ Open the project folder:
 cd C:\abc\OneDrive\Documents\New
 ```
 
-Set the Python executable used on this machine:
 
-```powershell
-$py = 'C:\Users\Darshika Singh\AppData\Local\Programs\Python\Python313\python.exe'
-```
 
 ### Run tests
 
